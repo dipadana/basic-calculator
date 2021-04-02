@@ -27,12 +27,11 @@ namespace APP_Dipadana
         private void button1_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
-            label5.Text = "0";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text.Length == 0)
+            if (textBox1.Text.Length != 0)
             {
             textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length -1);
             }
@@ -117,23 +116,23 @@ namespace APP_Dipadana
             if (calculate == "+")
             {
                 string[] splitString = textBox1.Text.Split('+');
-                label5.Text = (Int32.Parse(splitString[0]) + Int32.Parse(splitString[1])).ToString();
+                textBox1.Text = (Int32.Parse(splitString[0]) + Int32.Parse(splitString[1])).ToString();
             }
             else if (calculate == "-") {
                 string[] splitString = textBox1.Text.Split('-');
-                label5.Text = (Int32.Parse(splitString[0]) - Int32.Parse(splitString[1])).ToString();
+                textBox1.Text = (Int32.Parse(splitString[0]) - Int32.Parse(splitString[1])).ToString();
             }
             else if (calculate == "/")
             {
                 string[] splitString = textBox1.Text.Split('/');
-                label5.Text = (Int32.Parse(splitString[0]) / Int32.Parse(splitString[1])).ToString();
+                textBox1.Text = (Int32.Parse(splitString[0]) / Int32.Parse(splitString[1])).ToString();
             }
             else if (calculate == "x")
             {
                 string[] splitString = textBox1.Text.Split('x');
-                label5.Text = (Int32.Parse(splitString[0]) * Int32.Parse(splitString[1])).ToString();
+                textBox1.Text = (Int32.Parse(splitString[0]) * Int32.Parse(splitString[1])).ToString();
             }
-            System.Diagnostics.Debug.WriteLine(label5.Text);
+            System.Diagnostics.Debug.WriteLine(textBox1.Text);
         }
     }
 }
